@@ -1639,7 +1639,6 @@ var LibraryEmbind = {
 
         var leftClass = this.$$.ptrType.registeredClass;
         var left = this.$$.ptr;
-        other.$$ = /** @type {Object} */ (other.$$);
         var rightClass = other.$$.ptrType.registeredClass;
         var right = other.$$.ptr;
 
@@ -1721,6 +1720,7 @@ var LibraryEmbind = {
   $ClassHandle__postset: 'init_ClassHandle()',
   // root of all pointer and smart pointer handles in embind
   $ClassHandle: function() {
+    this.$$ = undefined;
   },
 
   $throwInstanceAlreadyDeleted__deps: ['$throwBindingError'],
